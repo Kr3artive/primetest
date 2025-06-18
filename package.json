@@ -1,6 +1,6 @@
 {
   "name": "primetester",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple CLI tool to test API endpoints from a JSON config file",
   "main": "src/tester.js",
   "bin": {
