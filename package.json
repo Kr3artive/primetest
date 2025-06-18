@@ -1,0 +1,35 @@
+{
+  "name": "primetester",
+  "version": "1.0.0",
+  "description": "A simple CLI tool to test API endpoints from a JSON config file",
+  "main": "src/tester.js",
+  "bin": {
+    "primetest": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "node bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kr3artive/primetest.git"
+  },
+  "keywords": [
+    "cli",
+    "api",
+    "tester",
+    "developer-tool",
+    "endpoint",
+    "rest",
+    "http"
+  ],
+  "author": "Abiye Omiete",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Kr3artive/primetest/issues"
+  },
+  "homepage": "https://github.com/Kr3artive/primetest#readme",
+  "dependencies": {
+    "axios": "^1.10.0"
+  }
+}
