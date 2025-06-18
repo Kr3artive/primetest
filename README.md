@@ -1,22 +1,26 @@
 # PrimeTest
 
-**PrimeTest** is a lightweight, configurable API testing utility designed for Node.js projects. It enables developers to test RESTful endpoints using simple JSON or JS configurations, with clear terminal output for automated or manual testing workflows.
+**PrimeTest** is a lightweight and configurable API testing utility for Node.js projects. It allows developers to test RESTful endpoints with minimal setup using clean JSON or JS-based configuration, making it ideal for automation, regression testing, or manual verification during development.
 
+---
 
 ## Installation
 
-To install PrimeTest into your project:
+Install **PrimeTest** as a development dependency:
 
-```
+```bash
 npm install @kr3artive/primetest
-
 ```
+
+---
 
 ## Usage
 
-1. Create a Configuration File
-Create a file named tester.config.js and export an array of test cases:
+### 1. Create a Configuration File
 
+Create a file named `tester.config.js` in your project root:
+
+```js
 // tester.config.js
 module.exports = [
   {
@@ -58,91 +62,119 @@ module.exports = [
     expectedStatus: 204
   }
 ];
+```
 
-2. Create a Test Runner Script
-In the root of your project, create a test.js file:
+---
 
+### 2. Create a Test Runner Script
+
+In your project root, create a `test.js` file:
+
+```js
 // test.js
 const runTests = require('@kr3artive/primetest');
 const config = require('./tester.config');
 
 runTests(config);
+```
 
-3. Run the Tests
-Use Node.js to run your tests:
+---
 
+### 3. Run Your Tests
+
+Use Node.js to run your test script:
+
+```bash
 node test.js
+```
 
-You’ll see results like:
+You’ll see output like:
 
+```bash
 ✅ GET - Fetch all users - 200
 ✅ POST - Create user - 201
 ❌ PUT - Update user - 404
 ↪ Expected: 200, Got: 404
 ✅ DELETE - Remove user - 204
+```
 
+---
 
 ## Configuration Options
 
-Each test in your config file can include the following:
+Each test object in your config file can include:
 
-Field	Type	Required	Description
-name	string	✅	A descriptive label for the test case
-method	string	✅	HTTP method (GET, POST, PUT, DELETE, etc.)
-url	string	✅	Full endpoint URL
-headers	object	❌	Optional headers (e.g., Content-Type)
-body	object	❌	JSON body for POST/PUT requests
-expectedStatus	number	✅	The expected HTTP status code
+| Field           | Type     | Required | Description                                 |
+|----------------|----------|----------|---------------------------------------------|
+| `name`          | `string` | ✅       | A descriptive label for the test case       |
+| `method`        | `string` | ✅       | HTTP method (GET, POST, PUT, DELETE, etc.)  |
+| `url`           | `string` | ✅       | Full endpoint URL                           |
+| `headers`       | `object` | ❌       | Optional request headers                    |
+| `body`          | `object` | ❌       | JSON body for POST/PUT requests             |
+| `expectedStatus`| `number` | ✅       | The expected HTTP status code               |
+
+---
 
 ## Real-World Use Cases
 
-1.Local development testing of Express.js APIs
+- Local development testing of Express.js or REST APIs  
+- API regression tests in CI/CD pipelines  
+- Lightweight QA for internal tools and microservices  
+- Automated sanity checks before deployments  
 
-2.API regression testing during continuous integration
-
-3.Lightweight QA for internal tools and microservices
-
-4.Automated sanity checks before deployment
+---
 
 ## Example NPM Script
-To streamline usage, add a script to your package.json:
 
+To streamline test execution, add this to your `package.json`:
+
+```json
 "scripts": {
   "test:api": "node test.js"
 }
-Then you can run:
-npm run test:api
+```
 
+Then run tests using:
+
+```bash
+npm run test:api
+```
+
+---
 
 ## Roadmap
+
 Planned features for future versions:
 
- CLI usage: primetest tester.config.js
+- ✅ CLI usage: `primetest tester.config.js`  
+- ✅ JSON & HTML result output  
+- ✅ Summary stats (pass/fail count)  
+- ✅ Retry and timeout configuration  
+- ✅ Grouped and nested test suites  
 
- JSON & HTML result reports
+---
 
- Summary stats for passed/failed tests
+## Contributing
 
- Retry & timeout configuration
+I'm open to contributions from the community! You can:
 
- Support for grouped test suites
+- Fork the repository  
+- Submit issues and feature requests  
+- Open pull requests  
 
-🙌 Contributing
-Contributions are welcome and appreciated! Feel free to:
+Let’s build better tools for developers—together.
 
-Fork the repo
+---
 
-Submit issues or feature requests
+## License
 
-Open pull requests
+This project is licensed under the [MIT License](./LICENSE).
 
-Let’s build better tools for developers together.
+---
 
-📄 License
-This project is licensed under the MIT License.
+## 👨‍💻 Author
 
-👨‍💻 Author
-Abiye Omiete
-GitHub: @Kr3artive
-Email: abiyeomiete@gmail.com
-NPM: @kr3artive
+**Abiye Omiete**  
+GitHub: [@Kr3artive](https://github.com/Kr3artive)  
+Email: [abiyeomiete@gmail.com](mailto:abiyeomiete@gmail.com)  
+NPM: [@kr3artive](https://www.npmjs.com/~kr3artive)
