@@ -10,6 +10,8 @@ To install PrimeTest into your project:
 ```
 npm install @kr3artive/primetest
 
+```
+
 ## Usage
 
 1. Create a Configuration File
@@ -69,7 +71,6 @@ runTests(config);
 3. Run the Tests
 Use Node.js to run your tests:
 
-```bash
 node test.js
 
 You’ll see results like:
@@ -81,7 +82,8 @@ You’ll see results like:
 ✅ DELETE - Remove user - 204
 
 
-🛠 Configuration Options
+## Configuration Options
+
 Each test in your config file can include the following:
 
 Field	Type	Required	Description
@@ -92,7 +94,7 @@ headers	object	❌	Optional headers (e.g., Content-Type)
 body	object	❌	JSON body for POST/PUT requests
 expectedStatus	number	✅	The expected HTTP status code
 
-📈 Real-World Use Cases
+## Real-World Use Cases
 
 1.Local development testing of Express.js APIs
 
@@ -102,18 +104,17 @@ expectedStatus	number	✅	The expected HTTP status code
 
 4.Automated sanity checks before deployment
 
-💡 Example NPM Script
+## Example NPM Script
 To streamline usage, add a script to your package.json:
 
 "scripts": {
   "test:api": "node test.js"
 }
 Then you can run:
-```
 npm run test:api
 
 
-📌 Roadmap
+## Roadmap
 Planned features for future versions:
 
  CLI usage: primetest tester.config.js
